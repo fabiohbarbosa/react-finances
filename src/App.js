@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
+import $ from 'jquery';
 
-import 'jquery';
 import 'bootstrap/dist/js/bootstrap.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-theme.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './css/sb-admin-2.css';
-
 
 class App extends Component {
   render() {
