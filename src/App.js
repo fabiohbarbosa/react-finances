@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import './css/sb-admin-2.css';
-
 class App extends Component {
   render() {
     return (

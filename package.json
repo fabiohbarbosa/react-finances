@@ -28,6 +28,9 @@
     "filesize": "3.3.0",
     "find-cache-dir": "0.1.1",
     "fs-extra": "0.30.0",
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.1.0",
+    "gulp-rename": "^1.2.2",
     "gzip-size": "3.0.0",
     "html-webpack-plugin": "2.22.0",
     "http-proxy-middleware": "0.17.1",
@@ -45,14 +48,15 @@
     "url-loader": "0.5.7",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.16.1",
-    "whatwg-fetch": "1.0.0"
+    "whatwg-fetch": "1.0.0",
+    "wiredep": "^4.0.0"
   },
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "node_modules/.bin/gulp inject && node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },

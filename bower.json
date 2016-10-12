@@ -1,0 +1,41 @@
+{
+  "name": "react-finances",
+  "description": "",
+  "main": "",
+  "authors": [
+    "fabiohbarbosa <fabiohbarbosa@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/fabiohbarbosa/react-finances",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.6.3",
+    "jquery": "^3.1.1"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.min.js",
+        "dist/css/bootstrap.min.css"
+      ]
+    },
+    "jquery": {
+      "main": [
+        "dist/jquery.min.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.min.css"
+      ]
+    }
+  }
+}
