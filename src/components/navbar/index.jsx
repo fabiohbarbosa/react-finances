@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './navbar.css';
+
 import {
   DropDown,
   DropDownItemFooter,
@@ -9,6 +11,8 @@ import {
 
 import {
   SidebarItem,
+  SidebarItemSecondLvl,
+  SidebarItemThirdLvl,
   Sidebar
 } from './Sidebar';
 
@@ -46,12 +50,17 @@ export default class Navbar extends Component {
           <DropDownItemDivider/>
 
           <DropDownItemFooter>
+            Read All Messages
           </DropDownItemFooter>
-          Read All Messages
         </DropDown>
 
         <Sidebar>
-          <SidebarItem icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html"/>
+          <SidebarItem icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html">
+            <SidebarItemSecondLvl icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html">
+              <SidebarItemThirdLvl icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html"/>
+            </SidebarItemSecondLvl>
+            <SidebarItemSecondLvl icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html"/>
+          </SidebarItem>
           <SidebarItem icon="fa fa-bar-chart-o fa-fw" name="Charts"/>
         </Sidebar>
       </nav>

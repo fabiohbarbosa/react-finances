@@ -53,10 +53,3 @@ export class DropDownItem extends Component {
     );
   }
 }
-
-/*
-export DropBox;
-export DropDownItemFooter;
-export DropDownItemDivider;
-export DropDownItem;
-*/
