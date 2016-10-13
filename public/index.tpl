@@ -14,7 +14,10 @@
     <title>Finanças</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="navbar"></div>
+    <div id="page-wrapper">
+      <div id="content"></div>
+    </div>
 
     <!-- bower:js -->
     <!-- endbower -->

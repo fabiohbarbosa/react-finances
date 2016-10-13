@@ -31,9 +31,12 @@ class NavbarHeader extends Component {
 }
 
 export default class Navbar extends Component {
+  style() {
+    return { 'marginBottom': '0px' };
+  }
   render() {
     return (
-      <nav className="navbar navbar-default navbar-static-top" role="navigation">
+      <nav className="navbar navbar-default navbar-static-top" role="navigation" style={this.style()}>
         <NavbarHeader title="Finanças"/>
 
         <DropDown icon="fa fa-envelope fa-fw">

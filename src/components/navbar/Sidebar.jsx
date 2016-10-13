@@ -17,8 +17,6 @@ export class SidebarItem extends Component {
       this.setState( {href: '#'} ); // default href
     }
 
-    console.log(this.state);
-
     if (this.props.children && this.props.children.length) {
       for (let i = 0 ; i < this.props.children.length ; i++) {
         let child = this.props.children[i];
