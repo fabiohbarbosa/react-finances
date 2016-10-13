@@ -11,8 +11,6 @@ import {
 
 import {
   SidebarItem,
-  SidebarItemSecondLvl,
-  SidebarItemThirdLvl,
   Sidebar
 } from './Sidebar';
 
@@ -55,12 +53,7 @@ export default class Navbar extends Component {
         </DropDown>
 
         <Sidebar>
-          <SidebarItem icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html">
-            <SidebarItemSecondLvl icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html">
-              <SidebarItemThirdLvl icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html"/>
-            </SidebarItemSecondLvl>
-            <SidebarItemSecondLvl icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html"/>
-          </SidebarItem>
+          <SidebarItem icon="fa fa-dashboard fa-fw" name="Dashboard" href="index.html"/>
           <SidebarItem icon="fa fa-bar-chart-o fa-fw" name="Charts"/>
         </Sidebar>
       </nav>

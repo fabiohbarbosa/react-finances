@@ -4,6 +4,7 @@ export class SidebarItem extends Component {
   constructor() {
     super();
     this.state = {
+      lvl: 1,
       href: '' ,
       containAnotherItemLvl: false
     };
@@ -16,10 +17,12 @@ export class SidebarItem extends Component {
       this.setState( {href: '#'} ); // default href
     }
 
+    console.log(this.state);
+
     if (this.props.children && this.props.children.length) {
       for (let i = 0 ; i < this.props.children.length ; i++) {
         let child = this.props.children[i];
-        if (child.type.name === 'SidebarItemSecondLvl') {
+        if (child.type.name === 'SidebarItem') {
           this.setState( {containAnotherItemLvl: true} );
           break;
         }
@@ -27,100 +30,53 @@ export class SidebarItem extends Component {
     }
   }
 
-  arrow() {
-    if (this.state.containAnotherItemLvl) {
-      return (
-        <span className="fa arrow"></span>
-      )
+  mainLvl() {
+    if (this.props.lvl > 0) {
+      return;
     }
-  }
-
-  render() {
     return (
       <li>
         <a href={this.state.href}>
-          <i className={this.props.icon}></i> { this.arrow() }
+          <i className={this.props.icon}></i>
+          { this.state.containAnotherItemLvl ? <span className="fa arrow"></span> : null }
           {this.props.name}
         </a>
         {this.props.children}
       </li>
     );
   }
-}
 
-export class SidebarItemSecondLvl extends Component {
-  constructor() {
-    super();
-    this.state = { href: '' };
+  style() {
+    let px = 15 + this.props.lvl * 10;
+    return { 'paddingLeft': px };
   }
 
-  componentDidMount() {
-    if (this.props.href) {
-      this.setState( {href: this.props.href} );
-    } else {
-      this.setState( {href: '#'} ); // default href
-    }
-
-    if (this.props.children && this.props.children.length) {
-      for (let i = 0 ; i < this.props.children.length ; i++) {
-        let child = this.props.children[i];
-        if (child.type.name === 'SidebarItemThirdLvl') {
-          this.setState( {containAnotherItemLvl: true} );
-          break;
-        }
-      }
-    }
-  }
-
-  arrow() {
-    if (this.state.containAnotherItemLvl) {
+  render() {
+    if (!this.props.lvl || this.props.lvl < 0) {
       return (
-        <span className="fa arrow"></span>
-      )
-    }
-  }
-
-  render() {
-    return (
-      <ul className="nav nav-second-level">
-        <li>
-          <a href={this.state.href}>
-            <i className={this.props.icon}></i> { this.arrow() }
-            {this.props.name}
-          </a>
-          {this.props.children}
-        </li>
-      </ul>
-    );
-  }
-}
-
-export class SidebarItemThirdLvl extends Component {
-  constructor() {
-    super();
-    this.state = { href: '' };
-  }
-
-  componentDidMount() {
-    if (this.props.href) {
-      this.setState( {href: this.props.href} );
-    } else {
-      this.setState( {href: '#'} ); // default href
-    }
-  }
-
-  render() {
-    return (
-      <ul className="nav nav-third-level">
         <li>
           <a href={this.state.href}>
             <i className={this.props.icon}></i>
+            { this.state.containAnotherItemLvl ? <span className="fa arrow"></span> : null }
             {this.props.name}
           </a>
           {this.props.children}
         </li>
-      </ul>
-    );
+      );
+    } else {
+      return (
+        <ul className="nav nav-second-level">
+          <li>
+            <a href={this.state.href} style={this.style()}>
+              <i className={this.props.icon}></i>
+              { this.state.containAnotherItemLvl ? <span className="fa arrow"></span> : null }
+              {this.props.name}
+            </a>
+            {this.props.children}
+          </li>
+        </ul>
+      )
+    }
   }
 }
 
