@@ -40,6 +40,7 @@
     "path-exists": "2.1.0",
     "postcss-loader": "0.13.0",
     "promise": "7.1.1",
+    "pushstate-server": "^2.1.0",
     "react-dev-utils": "^0.2.1",
     "recursive-readdir": "2.1.0",
     "rimraf": "2.5.4",
@@ -57,6 +58,7 @@
   },
   "scripts": {
     "start": "node_modules/.bin/gulp inject && node scripts/start.js",
+    "build:start": "npm run build && node_modules/.bin/pushstate-server build",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },

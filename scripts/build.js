@@ -177,14 +177,10 @@ function build(previousSizeMap) {
   });
 }
 
-// TODO minify vendor
 function copyPublicFolder() {
   fs.copySync(paths.appPublic, paths.appBuild, {
     dereference: true,
-    filter: file => file !== paths.appHtml &&
-      file.indexOf("bower_components") < 0 &&
-      file.indexOf(".tpl") < 0
+    filter: file => file !== paths.appHtml
+    && file.indexOf(".tpl") < 0
   });
-
-  fs.removeSync(paths.appBuild+'/bower_components');
 }
