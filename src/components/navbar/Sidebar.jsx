@@ -45,6 +45,9 @@ export class SidebarItem extends Component {
   }
 
   style() {
+    if (!this.props.lvl) {
+      return;
+    }
     let px = 15 + this.props.lvl * 10;
     return { 'paddingLeft': px };
   }

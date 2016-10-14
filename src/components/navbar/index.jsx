@@ -24,7 +24,7 @@ class NavbarHeader extends Component {
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
         </button>
-        <a className="navbar-brand" href="index.html">{this.props.title}</a>
+        <a className="navbar-brand" href={this.props.href}>{this.props.title}</a>
       </div>
     );
   }
@@ -37,7 +37,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-default navbar-static-top" role="navigation" style={this.style()}>
-        <NavbarHeader title="Finanças"/>
+        <NavbarHeader title="Finanças" href="index.html"/>
 
         <DropDown icon="fa fa-envelope fa-fw">
           <DropDownItem title="John Smith" titleRight="Yesterday">
